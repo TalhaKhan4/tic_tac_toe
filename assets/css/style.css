@@ -1,0 +1,172 @@
+/* Open Sans font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+/*** layout ***/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+
+  font-family: "Open Sans", sans-serif;
+
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.container > div {
+  /* setting width on #message, #game-board, #score */
+  width: 315px;
+}
+
+#message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  font-size: 37px;
+  word-spacing: 1px;
+}
+
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  height: 56%;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+
+  border: 1.4px solid #fff;
+  cursor: pointer;
+}
+
+.box img {
+  width: 76%;
+}
+
+#box0,
+#box1,
+#box2 {
+  border-top: none;
+}
+
+#box6,
+#box7,
+#box8 {
+  border-bottom: none;
+}
+
+#box0,
+#box3,
+#box6 {
+  border-left: none;
+}
+
+#box2,
+#box5,
+#box8 {
+  border-right: none;
+}
+
+#overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  font-size: 20px;
+}
+
+#player-score,
+#tie-score,
+#computer-score {
+  text-align: center;
+}
+
+#game-mode-btn {
+  /* position: relative; */
+  /* bottom: 4px; */
+  font-size: 22px;
+  color: #aea4a4d6;
+  cursor: pointer;
+}
+
+#game-mode-btn :hover {
+  color: #fff;
+}
+
+/*** other classes ***/
+
+.font-bold {
+  font-weight: 800;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.tie-effect {
+  animation: border-show-hide 1s cubic-bezier(1, 0, 0, 1) 1.2;
+}
+
+/*** animations ***/
+
+@keyframes border-show-hide {
+  0% {
+    border-color: transparent;
+  }
+
+  15% {
+    border-color: var(--white);
+  }
+
+  30% {
+    border-color: transparent;
+  }
+
+  45% {
+    border-color: var(--white);
+  }
+
+  60% {
+    border-color: transparent;
+  }
+
+  75% {
+    border-color: var(--white);
+  }
+
+  90% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: var(--white);
+  }
+}
